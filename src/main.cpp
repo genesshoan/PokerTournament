@@ -1,6 +1,15 @@
-#include <iostream>
+#include "Jugador.h"
 
-int main(int argc, char *argv[])
-{
-    std::cout << "Hello world!" << std::endl;
+int main() {
+    Jugador j;
+    CargarJugador(j, 0);
+    MostrarJugador(j);
+    CargarJugador(j, 1);
+    MostrarJugador(j);
+    CargarJugador(j, 2);
+    MostrarJugador(j);
+    CargarJugador(j, 3);
+    MostrarJugador(j);
+    CargarJugador(j, 4);
+    MostrarJugador(j);
 }
