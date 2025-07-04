@@ -1,15 +1,10 @@
-#include "Jugador.h"
+//#include "Jugador.h"
+#include "Partida.h"
 
 int main() {
-    Jugador j;
-    CargarJugador(j, 0);
-    MostrarJugador(j);
-    CargarJugador(j, 1);
-    MostrarJugador(j);
-    CargarJugador(j, 2);
-    MostrarJugador(j);
-    CargarJugador(j, 3);
-    MostrarJugador(j);
-    CargarJugador(j, 4);
-    MostrarJugador(j);
+    Partida p;
+    CargarPartida(p, 0);
+    MostrarPartida(p);
+    CargarPartida(p, 1);
+    MostrarPartida(p);
 }
