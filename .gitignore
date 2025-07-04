@@ -1,1 +1,5 @@
-.vscode
+.vscode/
+Makefile
+*.o
+output/
+*.exe
