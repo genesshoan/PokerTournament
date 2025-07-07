@@ -81,7 +81,7 @@ boolean FechaPosterior (Fecha f1, Fecha f2){
             else 
                  if (Devolver_Mes(f1) == Devolver_Mes(f2)) 
                  {
-                    if (Devolver_Dia(f1) >= Devolver_Dia(f2))
+                    if (Devolver_Dia(f1) > Devolver_Dia(f2))
                         posterior = TRUE;
                  }
         }   
@@ -109,7 +109,7 @@ boolean FechaAnterior (Fecha f1, Fecha f2){
             else 
                  if (Devolver_Mes(f1) == Devolver_Mes(f2)) 
                  {
-                    if (Devolver_Dia(f1) <= Devolver_Dia(f2))
+                    if (Devolver_Dia(f1) < Devolver_Dia(f2))
                         anterior = TRUE;
                  }
         } 
