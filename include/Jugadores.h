@@ -19,6 +19,8 @@ void InsFront (Lista &l, Jugador j);
 
 void ModificarLista(Lista &l, Jugador j);
 
+void EliminarNodo(Lista &l, long int cedula);
+
 void MostrarLista (Lista l);
 
 void CantJugadoresNacidosLista (Lista l, Fecha f, int &antes, int &durante, int &despues);
