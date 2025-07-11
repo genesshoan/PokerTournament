@@ -1,39 +1,81 @@
 #include "Sistema.h"
+#include "menu.h"
 
 
-int main() {
+int main () {
     Jugadores jugadores;
     PartidasJugadas partidas;
     Torneo torneo;
 
-    Make(jugadores);
-    Crear(partidas);
+    boolean salir = FALSE;
+    int opcion;
+
+    // Crear colecciones vacias
     Crear(torneo);
+    Crear(partidas);
+    Make(jugadores);
 
-    printf("=== Registro de jugadores ===\n");
-    ResgistrarJugador(jugadores, 12345678);
-    ResgistrarJugador(jugadores, 87654321);
-    ResgistrarJugador(jugadores, 12345678); // Intentar registrar duplicado
+    // Cambiar color del fondo
+    system("COLOR 90");
+    
+    do
+    {
+        long int cedula;
+        long int cedula2;
+        MenuPrincipal(opcion);
+        TitulosMenuPrincipal(opcion);
 
-    printf("\n=== Listar todos los jugadores ===\n");
-    ListarTodosLosJugadores(jugadores);
-
-    printf("\n=== Registrar partida ===\n");
-    RegistrarPartida(jugadores, partidas, torneo, 12345678, 87654321);
-    RegistrarPartida(jugadores, partidas, torneo, 12345678, 12345678); // Misma cédula
-
-    printf("\n=== Listar todas las partidas ===\n");
-    ListarTodasLasPartidas(partidas);
-
-    printf("\n=== Datos de jugador ===\n");
-    ListarDatosPorJugador(jugadores, partidas, 12345678);
-
-    printf("\n=== Jugadores por fecha ===\n");
-    CantidadJugadoresPorFecha(jugadores);
-
-    printf("\n=== Ver si están en la misma subdivisión ===\n");
-    MismaSubdivision(torneo, jugadores, 12345678, 87654321);
-
-    printf("\n=== Mostrar torneo completo ===\n");
-    MostrarTorneoCompleto(torneo, jugadores);
+        switch (opcion) {
+        case 0:
+            salir = TRUE;
+            break;
+        case 1:
+            printf("\tIngrese la cedula del jugador: ");
+            scanf("%ld", &cedula);
+            ResgistrarJugador(jugadores, cedula);
+            break;
+        case 2:
+            ListarTodosLosJugadores(jugadores);
+            break;
+        case 3:
+            printf("\tIngrese la cedula del jugador: ");
+            scanf("%ld", &cedula);
+            ClearBuffer();
+            ListarDatosPorJugador(jugadores, partidas, cedula);
+            break;
+        case 4:
+            printf("\tIngrese la cedula del jugador 1: ");
+            scanf("%ld", &cedula);
+            printf("\tIngrese la cedula del jugador 2: ");
+            scanf("%ld", &cedula2);
+            ClearBuffer();
+            RegistrarPartida(jugadores, partidas, torneo, cedula, cedula2);
+            break;
+        case 5:
+            ListarTodasLasPartidas(partidas);
+            break;
+        case 6:
+            CantidadJugadoresPorFecha(jugadores);
+            break;
+        case 7:
+            printf("\tIngrese la cedula del jugador 1: ");
+            scanf("%ld", &cedula);
+            printf("\tIngrese la cedula del jugador 2: ");
+            scanf("%ld", &cedula2);
+            MismaSubdivision(torneo, jugadores, cedula, cedula2);
+            break;
+        case 8:
+            MostrarTorneoCompleto(torneo, jugadores);
+            break; 
+        default:
+            printf("\t[ ERROR ]: Opcion invalida, intente nuevamente.\n");
+            break;
+        }
+        if (!salir){
+            printf("\t");
+            system("pause");
+        }
+    } while (!salir);
+    
+    Adios();
 }

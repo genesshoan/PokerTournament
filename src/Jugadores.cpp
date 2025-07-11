@@ -78,8 +78,8 @@ void CantJugadoresNacidosLista (Lista l, Fecha f, int &antes, int &durante, int 
                 durante++;
             else
                 despues++;
-            l = l->sig;
         }
+        l = l->sig;
     }
 }
 

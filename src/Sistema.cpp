@@ -17,7 +17,6 @@ void ListarTodosLosJugadores(Jugadores j)
         printf("\t[ INFO ]: No hay jugadores registrados en el sistema.\n");
     }
     else {
-        printf("Jugadores del sistema:\n");
         ListarJugadores(j);
     }
 }
@@ -27,7 +26,6 @@ void ListarDatosPorJugador (Jugadores j, PartidasJugadas p, long int cedula) {
         printf("\t[ ERROR ]: El jugador con cedula %ld no existe en el sistema.\n", cedula);
     } else {
         Jugador jug = Find(j, cedula);
-        printf("\tDatos del jugador:\n");
         MostrarJugador(jug);
         if (GetPartidasDisputadas(jug) == 0) {
             printf("\t[ INFO ]: El jugador no ha disputado ninguna partida.\n");
