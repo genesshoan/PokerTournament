@@ -85,7 +85,7 @@ int GetPartidasGanadas (Jugador j);
  * @param j El jugador al cual se le desea cargar.
  * @param cedula La cedula a establecer.
  */
-void CargarJugador (Jugador &j, int numero);
+void CargarJugador (Jugador &j, long int cedula, int numero);
 
 /**
  * @fn MostrarJugador
@@ -94,5 +94,18 @@ void CargarJugador (Jugador &j, int numero);
  */
 void MostrarJugador (Jugador j); 
 
+/**
+ * @fn IncrementarPartidasDisputadas
+ * @brief Incrementa la cantidad de partidas disputadas del jugador.
+ * @param j El jugador al cual se le desea incrementar la cantidad de partidas disputadas.
+ */
+void IncrementarPartidasDisputadas (Jugador &j);
+
+/**
+ * @fn IncrementarPartidasGanadas
+ * @brief Incrementa la cantidad de partidas ganadas del jugador.
+ * @param j El jugador al cual se le desea incrementar la cantidad de partidas ganadas.
+ */
+void IncrementarPartidasGanadas (Jugador &j);
 
 #endif

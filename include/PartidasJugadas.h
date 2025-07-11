@@ -104,9 +104,8 @@ void ListarPartidasPorJugador (PartidasJugadas p, long int cedula);
  * @brief Devuelve el número de la última partida jugada.
  * @param p La lista de partidas jugadas.
  * @return El número de la última partida jugada.
- * @pre La secuencia no debe estar vacía.
  */
-int DevolverUltimoNrP (PartidasJugadas p);
+int DevolverSiguienteNmrPartida (PartidasJugadas p);
 
 
 #endif

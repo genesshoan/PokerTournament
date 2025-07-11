@@ -80,6 +80,12 @@ void ListarPartidasPorJugador (PartidasJugadas p, long int cedula) {
     }
 }
 
-int DevolverUltimoNrP (PartidasJugadas p) {
-    return GetNumeroPartida(p.ult->info);
+int DevolverSiguienteNmrPartida (PartidasJugadas p) {
+    int num;
+    if (EsVacia(p)) {
+        num = 1;
+    } else {
+        num = GetNumeroPartida(p.ult->info) + 1;
+    }
+    return num;
 }

@@ -40,11 +40,15 @@ int GetNumeroPartida(Partida p);
 long int GetCedulaVencedor (Partida p);
 
 /**
- * @brief Carga una partida desde un archivo.
+ * @brief Carga una partida.
  * @param d Partida a cargar.
  * @param numero Numero de la partida a cargar.
+ * @param c1 Cedula del jugador 1.
+ * @param c2 Cedula del jugador 2.
+ * @details Esta función solicita al usuario que ingrese la cedula del jugador ganador y valida que sea una de las cedulas de los jugadores participantes.
+ * @note La cedula del ganador debe ser la cedula de uno de los jugadores participantes.
  */
-void CargarPartida (Partida &p, int numero);
+void CargarPartida (Partida &p, long int c1, long int c2, int numero);
 
 /**
  * @brief Muestra los detalles de una partida.

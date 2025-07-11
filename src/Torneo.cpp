@@ -19,6 +19,7 @@ boolean PerteneceVertice (Torneo t, int v) {
 boolean PerteneceArista (Torneo t, int u, int v) {
     return (boolean)(PerteneceVertice(t, u) && PerteneceVertice(t, v) && t[u][v] == 1);
 }
+
 // void InsertarVertice (Torneo &t, int v);
 
 void InsertarArista (Torneo &t, int u, int v) {

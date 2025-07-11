@@ -14,6 +14,14 @@ boolean PerteneceLista (Lista l, long int cedula) {
     return pertenece;
 }
 
+void MayorLista(Lista l, int &mayor) { 
+    while (l != NULL) {
+        if (GetNumeroJugador(l->info) > mayor)
+            mayor = GetNumeroJugador(l->info);
+        l->sig;
+    }
+}
+
 void InsFront (Lista &l, Jugador j) {
     Lista nuevo = new NodoJ;
     nuevo->info = j;
@@ -75,6 +83,23 @@ void CantJugadoresNacidosLista (Lista l, Fecha f, int &antes, int &durante, int 
     }
 }
 
+void MayorGanadasLista(Lista l, int maxGanadas) {
+    while (l != NULL) {
+        if (GetPartidasGanadas(l->info) > maxGanadas) {
+            maxGanadas = GetPartidasGanadas(l->info);
+        }
+        l = l->sig;
+    }
+}
+
+void MostrarGanadoresLista (Lista l, int maxGanadas) {
+    while (l != NULL) {
+        if (GetPartidasGanadas(l->info) == maxGanadas)
+            MostrarJugador(l->info);
+        l = l->sig;
+    }  
+}
+
 int h(long int cedula) {
     return cedula % B;
 }
@@ -120,4 +145,37 @@ void CantJugadoresNacidos (Jugadores j, Fecha f, int &antes, int &durante, int &
     despues = 0;
     for (int i = 0; i < B; i++)
         CantJugadoresNacidosLista(j[i], f, antes, durante, despues);
+}
+
+boolean HayJugadores (Jugadores j) {
+    boolean hay = FALSE;
+    int i = 0;
+    while (i < B && !hay) {
+        if (j[i] != NULL)
+            hay = TRUE;
+        i++;
+    }
+    return hay;
+}
+
+int NumeroSiguiente(Jugadores j) {
+    int mayor = 0;
+    for (int i = 0; i < B; i++) {
+        Lista l = j[i];
+        MayorLista(l, mayor);
+    }
+    
+    return mayor + 1;
+}
+
+int ObtenerMayorCantidadGanadas (Jugadores j) {
+    int maxGanadas = 0;
+    for (int i = 0; i < B; i++)
+        MayorGanadasLista(j[i], maxGanadas);
+    return maxGanadas;
+}
+
+void MostrarGanadores(Jugadores j, int maxGanadas) {
+    for (int i = 0; i < B; i++)
+        MostrarGanadoresLista(j[i], maxGanadas);
 }

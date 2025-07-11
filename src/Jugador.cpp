@@ -32,12 +32,10 @@ int GetPartidasGanadas (Jugador j) {
     return j.Cant_Partidas_Ganadas;
 }
 
-void CargarJugador (Jugador &j, int numero) {
+void CargarJugador (Jugador &j, long int cedula, int numero) {
     j.Nro_Jugador = numero;
-    printf("\tIngrese la cedula del jugador: ");
-    scanf("%ld", &j.Cedula);
+    j.Cedula = cedula;
     printf("\tFecha de nacimiento del jugador:\n");
-    ClearBuffer();
     Cargar_Fecha(j.Fecha_Nacimiento);
     strcrear(j.Nombre);
     printf("\tIngrese el nombre del jugador: ");
@@ -72,4 +70,12 @@ void MostrarJugador (Jugador j) {
     print(Departamento);   
     printf("\tPartidas disputadas: %d\n", GetPartidasDisputadas(j));
     printf("\tPartidas ganadas: %d\n", GetPartidasGanadas(j));
+}
+
+void IncrementarPartidasDisputadas (Jugador &j) {
+    j.Cant_Partidas_Disputadas++;
+}
+
+void IncrementarPartidasGanadas (Jugador &j) {
+    j.Cant_Partidas_Ganadas++;
 }

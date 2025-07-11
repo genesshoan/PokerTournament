@@ -16,12 +16,10 @@ long int GetCedulaVencedor (Partida p) {
     return p.Cedula_Vencedor;
 }
 
-void CargarPartida (Partida &p, int numero) {
+void CargarPartida (Partida &p, long int c1, long int c2, int numero) {
     p.Nro_Partida = numero;
-    printf("\tIngrese la Cedula del Jugador 1: ");
-    scanf("%ld", &p.Cedula_Jugador1);
-    printf("\tIngrese la Cedula del Jugador 2: ");
-    scanf("%ld", &p.Cedula_Jugador2);
+    p.Cedula_Jugador1 = c1;
+    p.Cedula_Jugador2 = c2;
 
     boolean cedulaValida = FALSE;
     while (!cedulaValida) {
@@ -30,7 +28,7 @@ void CargarPartida (Partida &p, int numero) {
         if (GetCedulaJugador1(p) == GetCedulaVencedor(p) || GetCedulaJugador2(p) == GetCedulaVencedor(p))
             cedulaValida = TRUE;
         else
-            printf("Cedula del ganador invalida. Debe ser la cedula de uno de los jugadores.\n");
+            printf("[ ERROR ]: Cedula del ganador invalida. Debe ser la cedula de uno de los jugadores.\n");
     }
 }
 
