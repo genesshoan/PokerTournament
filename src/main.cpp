@@ -1,37 +1,39 @@
-#include "PartidasJugadas.h"
+#include "Sistema.h"
+
 
 int main() {
-    PartidasJugadas lista;
-    
-    Crear(lista);
+    Jugadores jugadores;
+    PartidasJugadas partidas;
+    Torneo torneo;
 
-    printf("Esta vacia?: %s\n", EsVacia(lista) ? "Si" : "No");
+    Make(jugadores);
+    Crear(partidas);
+    Crear(torneo);
 
-    Partida p1 = {1, 12345678, 87654321, 12345678};
-    Partida p2 = {2, 87654321, 12345678, 87654321};
-    Partida p3 = {3, 55555555, 44444444, 55555555};
+    printf("=== Registro de jugadores ===\n");
+    ResgistrarJugador(jugadores, 12345678);
+    ResgistrarJugador(jugadores, 87654321);
+    ResgistrarJugador(jugadores, 12345678); // Intentar registrar duplicado
 
-    InsBack(lista, p1);
-    InsBack(lista, p2);
-    InsBack(lista, p3);
+    printf("\n=== Listar todos los jugadores ===\n");
+    ListarTodosLosJugadores(jugadores);
 
-    printf("\nLista completa:\n");
-    ListarPartidasJugadas(lista);
+    printf("\n=== Registrar partida ===\n");
+    RegistrarPartida(jugadores, partidas, torneo, 12345678, 87654321);
+    RegistrarPartida(jugadores, partidas, torneo, 12345678, 12345678); // Misma cédula
 
-    printf("\nCantidad de partidas: %d\n", Largo(lista));
+    printf("\n=== Listar todas las partidas ===\n");
+    ListarTodasLasPartidas(partidas);
 
-    printf("\nPrimera partida:\n");
-    MostrarPartida(Primero(lista));
+    printf("\n=== Datos de jugador ===\n");
+    ListarDatosPorJugador(jugadores, partidas, 12345678);
 
-    printf("\nPartida en posicion 1 (k = 1):\n");
-    MostrarPartida(K_esimo(lista, 1));
+    printf("\n=== Jugadores por fecha ===\n");
+    CantidadJugadoresPorFecha(jugadores);
 
-    printf("\nUltimo numero de partida: %d\n", DevolverUltimoNrP(lista));
+    printf("\n=== Ver si están en la misma subdivisión ===\n");
+    MismaSubdivision(torneo, jugadores, 12345678, 87654321);
 
-    printf("\nLista luego de aplicar Resto:\n");
-    Resto(lista);
-    ListarPartidasJugadas(lista);
-
-    printf("\nPartidas del jugador 12345678:\n");
-    ListarPartidasPorJugador(lista, 12345678);
+    printf("\n=== Mostrar torneo completo ===\n");
+    MostrarTorneoCompleto(torneo, jugadores);
 }

@@ -28,7 +28,7 @@ void CargarPartida (Partida &p, long int c1, long int c2, int numero) {
         if (GetCedulaJugador1(p) == GetCedulaVencedor(p) || GetCedulaJugador2(p) == GetCedulaVencedor(p))
             cedulaValida = TRUE;
         else
-            printf("[ ERROR ]: Cedula del ganador invalida. Debe ser la cedula de uno de los jugadores.\n");
+            printf("\t[ ERROR ]: Cedula del ganador invalida. Debe ser la cedula de uno de los jugadores.\n");
     }
 }
 

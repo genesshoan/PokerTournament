@@ -18,7 +18,7 @@ void MayorLista(Lista l, int &mayor) {
     while (l != NULL) {
         if (GetNumeroJugador(l->info) > mayor)
             mayor = GetNumeroJugador(l->info);
-        l->sig;
+        l = l->sig; 
     }
 }
 

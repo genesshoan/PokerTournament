@@ -1,8 +1,8 @@
 #include "Sistema.h"
 
 void ResgistrarJugador(Jugadores &j, long int cedula) {
-    if (!Member(j, cedula)) {
-        printf("\t[ ERROR ]: El jugador con la cedula %ld ya fue ingresado en el sistema.");
+    if (Member(j, cedula)) {
+        printf("\t[ ERROR ]: El jugador con la cedula %ld ya fue ingresado en el sistema.\n", cedula);
     } else {
         Jugador nuevoJugador;
         CargarJugador(nuevoJugador, cedula, NumeroSiguiente(j));
@@ -84,7 +84,7 @@ void RegistrarPartida (Jugadores &j, PartidasJugadas &p, Torneo &t, long int c1,
 }
 
 void ListarTodasLasPartidas(PartidasJugadas p) {
-    if (EsVacia) {
+    if (EsVacia(p)) {
         printf("\t[ INFO ]: No hay partidas registradas en el sistema.\n");
     } else {
         printf("\tPartidas jugadas en el torneo:\n");
@@ -131,7 +131,7 @@ void MismaSubdivision(Torneo t, Jugadores j, long int c1, long int c2) {
 
 void MostrarTorneoCompleto(Torneo t, Jugadores j) {
     if (!TorneoTerminado(t)) {
-        printf("[ INFO ]: El torneo aun no ha concluido.\n");
+        printf("\t[ INFO ]: El torneo aun no ha concluido.\n");
     } else {
         int maxGanadas = ObtenerMayorCantidadGanadas(j);
         printf("\tJugadores con la mayor cantidad de partidas ganadas (%d):\n", maxGanadas);
