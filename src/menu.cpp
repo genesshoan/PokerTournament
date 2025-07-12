@@ -50,7 +50,7 @@ void MenuPrincipal (int &opcion)
     printf("\n\t1. Registrar jugador.\n");
     printf("\t2. Listar todos los jugadores.\n");
     printf("\t3. Listar datos del jugador por cedula.\n");
-    printf("\t4. Listar todos los jugadores.\n");
+    printf("\t4. Registrar partida.\n");
     printf("\t5. Listar todas las partidas\n");
     printf("\t6. Cant. jugadores por fecha.\n");
     printf("\t7. Misma subdivision.\n");
@@ -65,10 +65,10 @@ void MenuPrincipal (int &opcion)
 
 void Adios ()
 {
-    printf("               _ _           \n");
-    printf("     /\\      | (_)          \n");
-    printf("    /  \\   __| |_  ___  ___ \n");
-    printf("   / /\\ \\ / _` | |/ _ \\/ __|\n");
-    printf("  / ____ \\ (_| | | (_) \\__ \\ \n");
-    printf(" /_/    \\_\\__,_|_|\\___/|___/ \n");
+    printf("\t               _ _           \n");
+    printf("\t     /\\      | (_)          \n");
+    printf("\t    /  \\   __| |_  ___  ___ \n");
+    printf("\t   / /\\ \\ / _` | |/ _ \\/ __|\n");
+    printf("\t  / ____ \\ (_| | | (_) \\__ \\ \n");
+    printf("\t /_/    \\_\\__,_|_|\\___/|___/ \n");
 }

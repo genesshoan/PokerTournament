@@ -4,10 +4,15 @@ void ResgistrarJugador(Jugadores &j, long int cedula) {
     if (Member(j, cedula)) {
         printf("\t[ ERROR ]: El jugador con la cedula %ld ya fue ingresado en el sistema.\n", cedula);
     } else {
-        Jugador nuevoJugador;
-        CargarJugador(nuevoJugador, cedula, NumeroSiguiente(j));
-        Insert(j, nuevoJugador);
-        printf("\t[ INFO ]: Jugador con cedula %ld registrado exitosamente.\n", cedula);
+        if (!CantidadJugadoresValidos(j)) {
+            printf("\t[ ERROR ]: No se pueden registrar mas jugadores, el sistema esta lleno.\n");
+        } else {
+            Jugador nuevoJugador;
+            CargarJugador(nuevoJugador, cedula, NumeroSiguiente(j));
+            Insert(j, nuevoJugador);
+            printf("\t[ INFO ]: Jugador con cedula %ld registrado exitosamente.\n", cedula);
+        }
+        
     }
 }
 

@@ -4,6 +4,15 @@ void CrearLista (Lista &l) {
     l = NULL;
 }
 
+int LargoLista(Lista l) {
+    int contador;
+    while(l != NULL) {
+        contador++;
+        l = l->sig;
+    }
+    return contador;
+}
+
 boolean PerteneceLista (Lista l, long int cedula) {
     boolean pertenece = FALSE;
     while (l != NULL && !pertenece) {
@@ -178,4 +187,15 @@ int ObtenerMayorCantidadGanadas (Jugadores j) {
 void MostrarGanadores(Jugadores j, int maxGanadas) {
     for (int i = 0; i < B; i++)
         MostrarGanadoresLista(j[i], maxGanadas);
+}
+
+int CantidadJugadores (Jugadores j) {
+    int cant = 0;
+    for (int i = 0; i < B; i++)
+        cant += LargoLista(j[i]);
+    return cant;
+}
+
+boolean CantidadJugadoresValidos (Jugadores j) {
+    return (boolean)(CantidadJugadores(j) <= B);
 }

@@ -19,6 +19,14 @@ typedef Lista Jugadores[B];
 void CrearLista (Lista &l);
 
 /**
+ * @fn LargoLista
+ * @brief Calcula el largo de una lista de jugadores.
+ * @param l Lista de jugadores.
+ * @return El número de jugadores en la lista.
+ */
+int LargoLista(Lista l);
+
+/**
  * @fn PerteneceLista
  * @brief Verifica si un jugador con la cédula dada pertenece a la lista.
  * @param l Lista de jugadores.
@@ -210,6 +218,22 @@ int ObtenerMayorCantidadGanadas (Jugadores j);
  * @details Recorre todas las listas de jugadores y muestra aquellos que tienen la mayor cantidad
  */
 void MostrarGanadores(Jugadores j, int maxGanadas);
+
+/**
+ * @fn CantidadJugadores
+ * @brief Cuenta la cantidad total de jugadores en el sistema.
+ * @param j La lista de jugadores.
+ * @return La cantidad total de jugadores.
+ */
+int CantidadJugadores (Jugadores j);
+
+/**
+ * @fn CantidadJugadoresValidos
+ * @brief Verifica si la cantidad de jugadores en el sistema es igual a B.
+ * @param j La lista de jugadores.
+ * @return TRUE si la cantidad de jugadores es igual a B, FALSE en caso contrario.
+ */
+boolean CantidadJugadoresValidos (Jugadores j);
 
 
 
