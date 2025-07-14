@@ -1,4 +1,6 @@
-.vscode/*
+.vscode/
+Makefile
 *.o
-./output/
->>>>>>> Stashed changes
+output/
+*.exe
+>>>>>>> dev
