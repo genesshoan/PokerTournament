@@ -93,7 +93,7 @@ void CantJugadoresNacidosLista (Lista l, Fecha f, int &antes, int &durante, int 
     }
 }
 
-void MayorGanadasLista(Lista l, int maxGanadas) {
+void MayorGanadasLista(Lista l, int &maxGanadas) {
     while (l != NULL) {
         if (GetPartidasGanadas(l->info) > maxGanadas) {
             maxGanadas = GetPartidasGanadas(l->info);

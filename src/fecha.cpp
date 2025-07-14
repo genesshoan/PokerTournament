@@ -56,17 +56,17 @@ void Cargar_Fecha(Fecha &fecha)
     boolean valido;
     do
     {
-        printf("\tIngrese la fecha (Formato DD MM AAAA): ");
+        printf("\t[ SIS ]:Ingrese la fecha (Formato DD MM AAAA): ");
         scanf("%d %d %d", &fecha.dia, &fecha.mes, &fecha.ano);
         valido = Validar_Fecha(fecha);
         if (!valido)
-            printf("\tEl valor de fecha ingresado es invalido, por favor intente nuevamente.\n");
+            printf("\t[ ERROR ]: El valor de fecha ingresado es invalido, por favor intente nuevamente.\n");
     } while (!valido);
 }
 
 void Mostrar_Fecha(Fecha fecha)
 {
-    printf("\tFecha: %d / %d / %d\n", Devolver_Dia(fecha), Devolver_Mes(fecha), Devolver_Ano(fecha));
+    printf("\t[ RES ]: Fecha: %d / %d / %d\n", Devolver_Dia(fecha), Devolver_Mes(fecha), Devolver_Ano(fecha));
 }
 
 boolean FechaPosterior (Fecha f1, Fecha f2){

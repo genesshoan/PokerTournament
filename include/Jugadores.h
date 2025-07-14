@@ -3,7 +3,7 @@
 
 #include "Jugador.h"
 
-const int B = 10; // Número de jugadores
+const int B = 3; // Número de jugadores
 typedef struct nodoJ {
 	Jugador info;
 	nodoJ * sig;
@@ -101,7 +101,7 @@ void CantJugadoresNacidosLista (Lista l, Fecha f, int &antes, int &durante, int 
  * @param l Lista de jugadores.
  * @param maxGanadas Referencia para almacenar la mayor cantidad de partidas ganadas.
  */
-void MayorGanadasLista(Lista l, int maxGanadas);
+void MayorGanadasLista(Lista l, int &maxGanadas);
 
 /**
  * @fn MostrarGanadoresLista

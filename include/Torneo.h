@@ -3,7 +3,7 @@
 
 #include "boolean.h"
 
-const int N = 10;
+const int N = 3;
 
 typedef int Torneo[N][N];
 
