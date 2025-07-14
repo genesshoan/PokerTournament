@@ -37,16 +37,11 @@ void CargarJugador (Jugador &j, long int cedula, int numero) {
     j.Cedula = cedula;
     printf("\t[ SIS ]: Fecha de nacimiento del jugador:\n");
     Cargar_Fecha(j.Fecha_Nacimiento);
-    strcrear(j.Nombre);
-    printf("\t[ SIS ]: Ingrese el nombre del jugador: ");
     ClearBuffer(); // Lipiar la linea, fflush(stdin) nos da error
-    scan(j.Nombre);
-    strcrear(j.Apellido);
-    printf("\t[ SIS ]: Ingrese el apellido del jugador: ");
-    scan(j.Apellido);
+    scanNombre(j.Nombre, "nombre");
+    scanNombre(j.Apellido, "apellido");
     strcrear(j.Departamento);
-    printf("\t[ SIS ]: Ingrese el departamento del jugador: ");
-    scan(j.Departamento);
+    scanNombre(j.Departamento, "departamento");
     j.Cant_Partidas_Disputadas = 0;
     j.Cant_Partidas_Ganadas = 0;
 }

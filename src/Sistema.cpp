@@ -144,7 +144,7 @@ void MostrarTorneoCompleto(Torneo t, Jugadores j) {
         int cantJugadores = CantidadJugadores(j);
         if (cantJugadores < B) {
             printf("\t[ INFO ]: Aun quedan jugadores por ser registrados ( %d / %d ).\n", cantJugadores, B);
-            printf("\t[ TIP ]: Digite la opción 1 en el menu principal, para registrar participantes.\n");
+            printf("\t[ TIP ]: Digite la opcion 1 en el menu principal, para registrar participantes.\n");
         }
     } else {
         int maxGanadas = ObtenerMayorCantidadGanadas(j);

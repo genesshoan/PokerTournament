@@ -176,6 +176,10 @@ boolean EsNumerico(string str);
 
 boolean EsCero(string str);
 
+boolean ContieneDigitos(string str);
+
 void scanCedula(long int &cedula);
+
+void scanNombre(string &str, const char * nombre);
 
 #endif

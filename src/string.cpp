@@ -228,14 +228,14 @@ void scanCedula(long int &cedula) {
     boolean valido = FALSE;
 
     do {
-        printf("\t[ SIS ]: Ingrese cédula sin puntos ni guiones: ");
+        printf("\t[ SIS ]: Ingrese cedula sin puntos ni guiones: ");
         scan(str);
 
         if (!EsNumerico(str)) {
-            printf("\t[ ERROR ]: Entrada inválida.\n");
-            printf("\t[ INFO ]: Solo se admiten dígitos (0...9). Intente nuevamente.\n");
+            printf("\t[ ERROR ]: Entrada invalida.\n");
+            printf("\t[ INFO ]: Solo se admiten digitos (0...9). Intente nuevamente.\n");
         } else if (EsCero(str)) {
-            printf("\t[ ERROR ]: Cédula inválida.\n");
+            printf("\t[ ERROR ]: Cedula invalida.\n");
             printf("\t[ INFO ]: Este campo no puede ser cero. Intente nuevamente.\n");
         } else {
             valido = TRUE;
@@ -247,4 +247,36 @@ void scanCedula(long int &cedula) {
     } while (!valido);
 
     cedula = convertirStringNumerico(str);
+}
+
+boolean ContieneDigitos(string str) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= '0' && str[i] <= '9') {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+void scanNombre (string &str, const char * nombre) {
+    strcrear(str);
+    boolean valido = FALSE;
+
+    do {
+        printf("\t[ SIS ]: Ingrese %s: ", nombre);
+        scan(str);
+
+        if (ContieneDigitos(str)) {
+            printf("\t[ ERROR ]: Entrada invalida.\n");
+            printf("\t[ INFO ]: Solo se admiten caracteres no numericos. Intente nuevamente.\n");
+        } else if (strlar(str) < 1) {
+            printf("\t[ ERROR ]: Entrada invalida.\n");
+            printf("\t[ INFO ]: Este campo no puede estar vacio. Intente nuevamente.\n");
+        } else {
+            valido = TRUE;
+        }
+
+        if (!valido)
+            strdestruir(str);
+    } while (!valido);
 }
