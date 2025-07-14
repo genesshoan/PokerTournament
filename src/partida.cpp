@@ -23,8 +23,8 @@ void CargarPartida (Partida &p, long int c1, long int c2, int numero) {
 
     boolean cedulaValida = FALSE;
     while (!cedulaValida) {
-        printf("\tIngrese la Cedula del Jugador Ganador: ");
-        scanf("%ld", &p.Cedula_Vencedor);
+        printf("\t[ SIS ]: Ingrese la Cedula del Jugador Ganador: ");
+        scanCedula(p.Cedula_Vencedor);
         if (GetCedulaJugador1(p) == GetCedulaVencedor(p) || GetCedulaJugador2(p) == GetCedulaVencedor(p))
             cedulaValida = TRUE;
         else
@@ -33,8 +33,8 @@ void CargarPartida (Partida &p, long int c1, long int c2, int numero) {
 }
 
 void MostrarPartida (Partida p) {
-    printf("\tNumero de partida: %d\n", GetNumeroPartida(p));
-    printf("\tCedula del jugador 1: %ld\n", GetCedulaJugador1(p));
-    printf("\tCedula del jugador 2: %ld\n", GetCedulaJugador2(p));
-    printf("\tCedula del ganador: %ld\n", GetCedulaVencedor(p));
+    printf("\t[ RES ]: Numero de partida: %d\n", GetNumeroPartida(p));
+    printf("\t[ RES ]: Cedula del jugador 1: %ld\n", GetCedulaJugador1(p));
+    printf("\t[ RES ]: Cedula del jugador 2: %ld\n", GetCedulaJugador2(p));
+    printf("\t[ RES ]: Cedula del ganador: %ld\n", GetCedulaVencedor(p));
 }

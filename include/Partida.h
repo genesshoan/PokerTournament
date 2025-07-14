@@ -2,7 +2,7 @@
 #define _PARTIDA_H
 
 #include <stdio.h>
-#include "boolean.h"
+#include "string.h"
 
 typedef struct {
     int Nro_Partida;

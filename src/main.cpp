@@ -30,25 +30,21 @@ int main () {
             salir = TRUE;
             break;
         case 1:
-            printf("\tIngrese la cedula del jugador: ");
-            scanf("%ld", &cedula);
+            scanCedula(cedula);
             ResgistrarJugador(jugadores, cedula);
             break;
         case 2:
             ListarTodosLosJugadores(jugadores);
             break;
         case 3:
-            printf("\tIngrese la cedula del jugador: ");
-            scanf("%ld", &cedula);
-            ClearBuffer();
+            scanCedula(cedula);
             ListarDatosPorJugador(jugadores, partidas, cedula);
             break;
         case 4:
-            printf("\tIngrese la cedula del jugador 1: ");
-            scanf("%ld", &cedula);
-            printf("\tIngrese la cedula del jugador 2: ");
-            scanf("%ld", &cedula2);
-            ClearBuffer();
+            printf("\t[ SIS ]:Ingrese la cedula del jugador 1:\n");
+            scanCedula(cedula);
+            printf("\t[ SIS ]: Ingrese la cedula del jugador 2:\n");
+            scanCedula(cedula2);
             RegistrarPartida(jugadores, partidas, torneo, cedula, cedula2);
             break;
         case 5:
@@ -58,10 +54,10 @@ int main () {
             CantidadJugadoresPorFecha(jugadores);
             break;
         case 7:
-            printf("\tIngrese la cedula del jugador 1: ");
-            scanf("%ld", &cedula);
-            printf("\tIngrese la cedula del jugador 2: ");
-            scanf("%ld", &cedula2);
+            printf("\t[ SIS ]: Ingrese la cedula del jugador 1:\n");
+            scanCedula(cedula);
+            printf("\t[ SIS ]: Ingrese la cedula del jugador 2:\n");
+            scanCedula(cedula2);
             MismaSubdivision(torneo, jugadores, cedula, cedula2);
             break;
         case 8:

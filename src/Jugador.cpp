@@ -35,26 +35,26 @@ int GetPartidasGanadas (Jugador j) {
 void CargarJugador (Jugador &j, long int cedula, int numero) {
     j.Nro_Jugador = numero;
     j.Cedula = cedula;
-    printf("\tFecha de nacimiento del jugador:\n");
+    printf("\t[ SIS ]: Fecha de nacimiento del jugador:\n");
     Cargar_Fecha(j.Fecha_Nacimiento);
     strcrear(j.Nombre);
-    printf("\tIngrese el nombre del jugador: ");
+    printf("\t[ SIS ]: Ingrese el nombre del jugador: ");
     ClearBuffer(); // Lipiar la linea, fflush(stdin) nos da error
     scan(j.Nombre);
     strcrear(j.Apellido);
-    printf("\tIngrese el apellido del jugador: ");
+    printf("\t[ SIS ]: Ingrese el apellido del jugador: ");
     scan(j.Apellido);
     strcrear(j.Departamento);
-    printf("\tIngrese el departamento del jugador: ");
+    printf("\t[ SIS ]: Ingrese el departamento del jugador: ");
     scan(j.Departamento);
     j.Cant_Partidas_Disputadas = 0;
     j.Cant_Partidas_Ganadas = 0;
 }
 
 void MostrarJugador (Jugador j) {
-    printf("\tCedula jugador: %ld\n", GetCedulaJugador(j));
+    printf("\t[ RES ]: Cedula jugador: %ld\n", GetCedulaJugador(j));
     Mostrar_Fecha(GetFechaNacimiento(j));
-    printf("\tNumero jugador: %d\n", GetNumeroJugador(j));
+    printf("\t[ RES ]: Numero jugador: %d\n", GetNumeroJugador(j));
     string Nombre, Apellido, Departamento;
     strcrear(Nombre);
     GetNombre(j, Nombre);
@@ -62,14 +62,14 @@ void MostrarJugador (Jugador j) {
     GetApellido(j, Apellido);
     strcrear(Departamento);
     GetDepartamento(j, Departamento);
-    printf("\tNombre: ");
+    printf("\t[ RES ]: Nombre: ");
     print(Nombre);
-    printf("\tApellido: ");
+    printf("\t[ RES ]: Apellido: ");
     print(Apellido);
-    printf("\tDepartamento: ");
+    printf("\t[ RES ]: Departamento: ");
     print(Departamento);   
-    printf("\tPartidas disputadas: %d\n", GetPartidasDisputadas(j));
-    printf("\tPartidas ganadas: %d\n", GetPartidasGanadas(j));
+    printf("\t[ RES ]: Partidas disputadas: %d\n", GetPartidasDisputadas(j));
+    printf("\t[ RES ]: Partidas ganadas: %d\n", GetPartidasGanadas(j));
 }
 
 void IncrementarPartidasDisputadas (Jugador &j) {

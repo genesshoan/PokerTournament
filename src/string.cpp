@@ -175,3 +175,76 @@ void ClearBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
+
+long int convertirStringNumerico(string str)
+{
+    int i = 0;
+    long int num = 0;
+    boolean negativo = FALSE;
+
+    if (str[i] == '-') {
+        negativo = TRUE;
+        i++;
+    }
+
+    while (str[i] != '\0') {
+        num = num * 10 + (str[i] - '0'); // 48 -> '0'
+        i++;
+    }
+
+    if (negativo)
+        num = -num;
+
+    return num;
+}
+
+boolean EsNumerico(string str) {
+    int i = 0;
+
+    if (str[0] == '\0')
+        return FALSE;
+
+    if (str[0] == '-') {
+        if (str[1] == '\0')
+            return FALSE;
+        i = 1;
+    }
+
+    for (; str[i] != '\0'; i++) {
+        if (str[i] < '0' || str[i] > '9')
+            return FALSE;
+    }
+
+    return TRUE;
+}
+
+boolean EsCero(string str) {
+    return (boolean)(convertirStringNumerico(str) == 0);
+}
+
+void scanCedula(long int &cedula) {
+    string str;
+    strcrear(str);
+    boolean valido = FALSE;
+
+    do {
+        printf("\t[ SIS ]: Ingrese cédula sin puntos ni guiones: ");
+        scan(str);
+
+        if (!EsNumerico(str)) {
+            printf("\t[ ERROR ]: Entrada inválida.\n");
+            printf("\t[ INFO ]: Solo se admiten dígitos (0...9). Intente nuevamente.\n");
+        } else if (EsCero(str)) {
+            printf("\t[ ERROR ]: Cédula inválida.\n");
+            printf("\t[ INFO ]: Este campo no puede ser cero. Intente nuevamente.\n");
+        } else {
+            valido = TRUE;
+        }
+
+        if (!valido)
+            strdestruir(str);
+
+    } while (!valido);
+
+    cedula = convertirStringNumerico(str);
+}

@@ -5,7 +5,7 @@ void CrearLista (Lista &l) {
 }
 
 int LargoLista(Lista l) {
-    int contador;
+    int contador = 0;
     while(l != NULL) {
         contador++;
         l = l->sig;
@@ -73,6 +73,7 @@ void EliminarNodo(Lista &l, long int cedula) {
 void MostrarLista (Lista l) {
     while (l != NULL) {
         MostrarJugador(l->info);
+        printf("\n");
         l = l->sig;
     }
 }

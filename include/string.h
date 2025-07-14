@@ -170,4 +170,12 @@ void Levantar_String (string &s, FILE * f);
 void ClearBuffer();
 // Limpia el Buffer 
 
+long int convertirStringNumerico(string str);
+
+boolean EsNumerico(string str);
+
+boolean EsCero(string str);
+
+void scanCedula(long int &cedula);
+
 #endif
