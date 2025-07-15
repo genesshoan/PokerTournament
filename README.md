@@ -373,7 +373,7 @@ Actúa como la fachada del sistema, coordinando las operaciones entre todos los 
 | --- | --- |
 | void ResgistrarJugador(Jugadores &j, long int cedula) | Ristra un jugador en el sistema. |
 | void ListarTodosLosJugadores (Jugadores jug) | Lista en pantalla todos los jugadores que están inscriptos en el Torneo |
-| void ListarDatosPorJugador (Jugadores j, PartidasJugadas p)void ListarDatosPorJugador (Jugadores j, PartidasJugadas p, long int cedula); | Dada la cédula de un jugador, listas sus datos y los de las partidas en las que ha participado. |
+| void ListarDatosPorJugador (Jugadores j, PartidasJugadas p, long int cedula); | Dada la cédula de un jugador, listas sus datos y los de las partidas en las que ha participado. |
 | void RegistrarPartida (Jugadores &j, PartidasJugadas &p, Torneo &t, long int c1, long int c2) | Registra las partidas entre dos jugadores. |
 | void ListarTodasLasPartidas (PartidasJugadas p) | Lista en pantalla todas las partidas jugadas en el Torneo |
 | void CantidadJugadoresPorFecha(Jugadores j) | Muestra la cantidad de Jugadores nacidos antes, durante y después de una Fecha  |
