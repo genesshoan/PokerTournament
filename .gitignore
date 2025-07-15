@@ -1,6 +1,7 @@
 .vscode/
 Makefile
 *.o
-output/
+output/*
 *.exe
->>>>>>> dev
+*.d
+*.json
