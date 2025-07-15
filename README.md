@@ -3,11 +3,6 @@
 - **Autores:** Valdo Castiglia, Shoan Genes.
 - **Profesor:** Joel Estramil.
 - **Fecha de entrega:** 15 de julio de 2025
-
----
-
-# Índice
-
 ---
 
 # Introducción general
@@ -40,7 +35,7 @@ El grafo se utiliza para modelar las **relaciones de juego entre los jugadores**
 - **Número máximo de aristas $\frac{N(N-1)}{2}$:** Ya que cada par de jugadores debe de jugar una sola vez entre sí.
 - **Grafo completo (Al finalizar el torneo):** Cuando termine el torneo todos los Jugadores habrán jugado entre si por lo tanto todos los vértices estarán conectados entre si
     
-    ![Ejemplo para un torneo de 5 participantes.](GrafoObligatorio.drawio.png)
+    ![Ejemplo para un torneo de 5 participantes.](https://github.com/genesshoan/PokerTournament/blob/main/img/GrafoObligatorio.drawio.png)
     
     Ejemplo para un torneo de 5 participantes.
     
@@ -109,7 +104,7 @@ Para cada estructura se presenta su definición en lenguaje `C++`, junto con la 
 
 En el contexto de este torneo y como se ha analizado previamente, dado que el torneo concluye cuando todos los jugadores han jugado con todos, menos ellos mismos, es decir, al tratarse de uno completo, la representación mediante de **listas de adyacencia** no es adecuada, esta es útil cuando la cantidad de aristas en el grafo no es elevada, ya que esta almacena en cada lista correspondiente a un vértice, todos los vértices adyacentes a este, al tratarse de un grafo que va a tener en algún momento muchas aristas, se pierde eficiencia en la búsqueda, el recorrido y el uso de memoria, ya que se duplican datos innecesariamente.
 
-![Ejemplo para el grafo representado en el “Análisis mediante grafo”.](fe08f348-fff1-4279-b8e4-a443ba8ccd9a.png)
+![Ejemplo para el grafo representado en el “Análisis mediante grafo”.](https://github.com/genesshoan/PokerTournament/blob/main/img/fe08f348-fff1-4279-b8e4-a443ba8ccd9a.png)
 
 Ejemplo para el grafo representado en el “Análisis mediante grafo”.
 
@@ -203,7 +198,7 @@ typedef struct{
 El sistema se estructura mediante una arquitectura modular que separa claramente las responsabilidades y facilita el mantenimiento del código. Esta organización permite una implementación escalable y comprensible, donde cada módulo encapsula funcionalidades específicas relacionadas con una entidad o conjunto de operaciones del dominio del problema.
 El **Módulo Sistema** actúa como coordinador principal, encargándose de las interacciones entre los diferentes componentes del sistema para proveer las funcionalidades de alto nivel requeridas por el usuario.
 
-![Esquema de Modulos.drawio.png](Esquema_de_Modulos.drawio.png)
+![Esquema de Modulos.drawio.png](https://github.com/genesshoan/PokerTournament/blob/main/img/Esquema_de_Modulos.drawio.png)
 
 # Definiciones
 
