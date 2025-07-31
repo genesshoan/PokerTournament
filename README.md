@@ -4,7 +4,7 @@ A comprehensive tournament management system for national poker tournaments, dev
 
 ## 🎮 Demo
 
-![Tournament Demo](docs/images/demo.gif)
+![Tournament Demo](https://github.com/genesshoan/PokerTournament/blob/main/doc/img/demo.gif)  
 *Complete tournament workflow: player registration, match recording, and results*
 
 ## 🎯 Features
