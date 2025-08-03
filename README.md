@@ -156,7 +156,7 @@ Identifies players with the maximum number of wins across the entire tournament.
 
 **Course**: Programming III  
 **Professor**: Joel Estramil  
-**Institution**: [University Name]
+**Institution**: Universidad de la Empresa
 
 ## 📄 License
 
